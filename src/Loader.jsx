@@ -1,31 +1,7 @@
 import { useEffect, useState } from 'react'
 import api from './api.jsx'
 
-const SearchBar = () => {
-    const [query, setQuery] = useState('')
-    const [busquedas, setBusqueda] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [error, setError] = useState(null)
-
-    useEffect(() => {
-        if (!query.trim()) return
-
-        setLoading(true)
-        setError(null)
-
-        api.get('/search/titles', {
-            params: { query }
-        })
-            .then((response) => {
-                setBusqueda(response.data.results ?? response.data)
-                setLoading(false)
-            })
-            .catch((error) => {
-                console.error('Error al cargar la busqueda', error)
-                setError('Ocurrió un error al buscar.')
-                setLoading(false)
-            })
-    }, [query])
+const Loader = () => {
 
     if (loading) return <p>Cargando...</p>
     if (error) return <p>{error}</p>
@@ -51,4 +27,4 @@ const SearchBar = () => {
     )
 }
 
-export default SearchBar
+export default Loader

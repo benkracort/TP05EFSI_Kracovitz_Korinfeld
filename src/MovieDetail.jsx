@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import api from './api.jsx'
 
-const MovieList = ({ id }) => {  
+const MovieDetail = ({ id }) => {  
     const [pelicula, setPelicula] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -64,4 +64,4 @@ const MovieList = ({ id }) => {
     );
 }
 
-export default MovieList
+export default MovieDetail
