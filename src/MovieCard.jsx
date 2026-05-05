@@ -1,14 +1,13 @@
-const MovieCard = () => {
-
+const MovieCard = ({ pelicula, onClick }) => {
     return (
         <li onClick={onClick} style={{ cursor: 'pointer' }}>
             <img
-                src={pelicula.primaryImage?.url ?? '/placeholder.jpg'}
-                alt={pelicula.primaryTitle ?? 'Sin título'}
+                src={pelicula.Poster !== 'N/A' ? pelicula.Poster : '/placeholder.jpg'}
+                alt={pelicula.Title ?? 'Sin título'}
             />
-            <h3>{pelicula.primaryTitle ?? 'Sin título'}</h3>
-            <p>{pelicula.startYear ?? 'Año desconocido'}</p>
-            <p>{pelicula.titleType ?? 'Tipo desconocido'}</p>
+            <h3>{pelicula.Title ?? 'Sin título'}</h3>
+            <p>{pelicula.Year ?? 'Año desconocido'}</p>
+            <p>{pelicula.Type ?? 'Tipo desconocido'}</p>
         </li>
     )
 }
