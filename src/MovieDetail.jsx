@@ -3,7 +3,7 @@ import api from './api.jsx'
 import Loader from './Loader.jsx'
 import ErrorMessage from './ErrorMessage.jsx'
 
-const MovieDetail = ({ imdbID }) => {
+const MovieDetail = ({ imdbID, onBack }) => {
     const [pelicula, setPelicula] = useState(null)
     const [loading, setLoading] = useState(false)
     const [error, setError] = useState(null)
@@ -43,6 +43,7 @@ const MovieDetail = ({ imdbID }) => {
             <p>Idioma: {pelicula.Language ?? 'N/A'}</p>
             <p>País: {pelicula.Country ?? 'N/A'}</p>
             {pelicula.imdbRating !== 'N/A' && <p>⭐ IMDb: {pelicula.imdbRating}/10</p>}
+            <button onClick={onBack}>Volver a buscar</button>
         </div>
     )
 }

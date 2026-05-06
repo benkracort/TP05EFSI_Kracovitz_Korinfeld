@@ -29,7 +29,12 @@ const SearchBar = () => {
                 setLoading(false)
             })
             .catch((error) => {
-                console.error('Error al cargar la busqueda', error)
+                console.error('Error al cargar la busqueda:', {
+                    message: error.message,
+                    response: error.response?.data,
+                    status: error.response?.status,
+                    url: error.config?.url
+                })
                 setError('Ocurrió un error al buscar.')
                 setLoading(false)
             })
@@ -52,8 +57,8 @@ const SearchBar = () => {
             {loading && <Loader />}
             {error && <ErrorMessage mensaje={error} />}
 
-            <MovieList busquedas={busquedas} onSelect={setSelectedMovie} />
-            {selectedMovie && <MovieDetail imdbID={selectedMovie} />}
+            {!selectedMovie && <MovieList busquedas={busquedas} onSelect={setSelectedMovie} />}
+            {selectedMovie && <MovieDetail imdbID={selectedMovie} onBack={() => setSelectedMovie(null)} />}
         </div>
     )
 }
