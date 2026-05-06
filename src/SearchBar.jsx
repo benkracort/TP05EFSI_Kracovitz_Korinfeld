@@ -44,15 +44,16 @@ const SearchBar = () => {
     const handleKeyDown = (e) => { if (e.key === 'Enter') handleSubmit() }
 
     return (
-        <div>
+        <div className="search-container">
             <input
                 type="text"
+                className="search-input"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder="Buscar película o serie..."
             />
-            <button onClick={handleSubmit}>Buscar</button>
+            <button className="search-button" onClick={handleSubmit}>Buscar</button>
 
             {loading && <Loader />}
             {error && <ErrorMessage mensaje={error} />}

@@ -1,6 +1,6 @@
 const MovieCard = ({ pelicula, onClick }) => {
     return (
-        <li onClick={onClick} style={{ cursor: 'pointer' }}>
+        <li onClick={onClick} className="movie-card">
             <img
                 src={pelicula.Poster !== 'N/A' ? pelicula.Poster : '/placeholder.jpg'}
                 alt={pelicula.Title ?? 'Sin título'}

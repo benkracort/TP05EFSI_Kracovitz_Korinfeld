@@ -6,10 +6,10 @@ const MovieList = ({ busquedas, onSelect }) => {
     if (busquedas.length === 0) return <p>No se encontraron resultados.</p>
 
     return (
-        <ul>
+        <ul className="movie-list">
             {busquedas.map((busqueda) => (
                 <MovieCard
-                    key={busqueda.id}
+                    key={busqueda.imdbID}
                     pelicula={busqueda}
                     onClick={() => onSelect(busqueda.imdbID)}
                 />

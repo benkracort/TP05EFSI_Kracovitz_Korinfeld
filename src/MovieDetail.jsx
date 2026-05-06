@@ -31,7 +31,7 @@ const MovieDetail = ({ imdbID, onBack }) => {
     if (!pelicula) return null
 
     return (
-        <div>
+        <div className="movie-detail">
             <img src={pelicula.Poster !== 'N/A' ? pelicula.Poster : '/placeholder.jpg'} alt={pelicula.Title} />
             <h1>{pelicula.Title ?? 'Sin título'}</h1>
             <p>Año: {pelicula.Year ?? 'N/A'}</p>

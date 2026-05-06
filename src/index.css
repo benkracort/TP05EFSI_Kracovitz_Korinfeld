@@ -109,3 +109,128 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* Search styles */
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.search-input {
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 16px;
+  width: 300px;
+  max-width: 100%;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.search-button {
+  padding: 12px 24px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+
+.search-button:hover {
+  background: var(--accent-border);
+}
+
+/* Movie styles */
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+
+.movie-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: transform 0.2s;
+  width: 200px;
+  text-align: center;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.movie-card h3 {
+  margin: 8px 0;
+  font-size: 18px;
+  color: var(--text-h);
+}
+
+.movie-card p {
+  margin: 4px 0;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.movie-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.movie-detail img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 4px;
+}
+
+.movie-detail h1 {
+  text-align: center;
+  color: var(--text-h);
+}
+
+.movie-detail p {
+  text-align: center;
+  margin: 8px 0;
+  color: var(--text);
+}
+
+.movie-detail button {
+  padding: 10px 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.movie-detail button:hover {
+  background: var(--accent-border);
+}
